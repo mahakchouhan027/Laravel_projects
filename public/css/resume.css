@@ -1,0 +1,225 @@
+@font-face {
+    font-family: 'Latin Modern Roman';
+    src: url('{{ public_path("fonts/lmroman/lmroman10-regular.ttf") }}') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Latin Modern Roman';
+    src: url('{{ public_path("fonts/lmroman/lmroman10-bold.ttf") }}') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Latin Modern Roman';
+    src: url('{{ public_path("fonts/lmroman/lmroman10-italic.ttf") }}') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Latin Modern Roman';
+    src: url('{{ public_path("fonts/lmroman/lmroman10-bolditalic.ttf") }}') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* --- Page & Typography --- */
+:root {
+    --page-w: 800px;
+    --accent: #111
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #f8f8f8;
+    color: #111;
+    font: 15px/1.45 "Latin Modern Roman", serif
+}
+
+.page {
+    width: 210mm;
+    /* Standard A4 width */
+    min-height: 297mm;
+    /* Standard A4 height */
+    margin: 24px auto 48px;
+    padding: 20mm;
+    /* adjust padding so content fits inside */
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+    box-sizing: border-box;
+    /* ensures padding doesn’t make it wider */
+}
+
+.page-margins {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.border-b-2 {
+    border-bottom: 2px solid #000;
+}
+
+.pb-1 {
+    padding-bottom: 4px;
+}
+
+
+.font-bold {
+    font-weight: 700;
+    color: #111
+}
+
+/* --- Header --- */
+.name {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 8px 0;
+    letter-spacing: .2px;
+    font-weight: 600
+}
+
+.contact {
+    text-align: center;
+    font-size: 14px;
+    color: #222
+}
+
+.contact a {
+    color: inherit;
+    text-decoration: none
+}
+
+.contact .row {
+    margin: 2px 0
+}
+
+.thin-sep {
+    color: #666;
+    padding: 0 8px
+}
+
+/* --- Sections --- */
+.section {
+    margin-top: 22px
+}
+
+.section-title {
+    font-variant-caps: small-caps;
+    letter-spacing: .8px;
+    font-weight: 700;
+    color: #111;
+    margin: 18px 0 6px;
+    border-bottom: 1px solid #111;
+    padding-bottom: 2px;
+}
+
+.divider {
+    width: 100%;
+    /* full width */
+    height: 8px;
+    /* thickness of the line */
+    background-color: #111;
+    /* color of the line */
+    /* spacing above/below */
+}
+
+
+
+/* --- Paragraphs & Lists --- */
+p {
+    margin: 8px 0
+}
+
+ul {
+    margin: 6px 0 8px 1.15rem;
+    padding: 0
+}
+
+li {
+    margin: 3px 0
+}
+
+/* --- Two-column entry --- */
+
+
+.role,
+.edu-degree,
+.pub-title,
+.proj-title {
+    font-weight: 700
+}
+
+.subtle {
+    color: #333
+}
+
+.entry-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.dates {
+    white-space: nowrap;
+    margin-left: auto;
+    /* pushes to the right in Flex */
+    text-align: right;
+}
+
+/* --- Fine details --- */
+.muted {
+    color: #4a4a4a
+}
+
+.small {
+    font-size: 14px
+}
+
+.tiny {
+    font-size: 13px
+}
+
+.nowrap {
+    white-space: nowrap
+}
+
+/* --- Spacing --- */
+.item {
+    margin-bottom: 10px;
+    width: 100%;
+    /* new */
+}
+
+/* Print */
+@media print {
+    body {
+        background: #fff
+    }
+
+    .page {
+        box-shadow: none;
+        margin: 0;
+        width: auto;
+        padding: .8in
+    }
+
+    a {
+        color: #000;
+        text-decoration: none
+    }
+}
